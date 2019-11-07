@@ -25,10 +25,9 @@ a:hover {
 .main-nav {
   overflow: hidden;
   width: 100%;
-  background: #654321;
   min-height: 30px;
   padding: 10px;
-  position: fixed;
+  position: absolute;
   text-align: center;
 }
 
@@ -42,15 +41,7 @@ a:hover {
   text-decoration: none;
 }
 
- .main-nav {
-  width: 100%;
-  background: #654321;
-  min-height: 30px;
-  padding: 10px;
-  position: fixed;
-  text-align: center;
-  z-index: 6;
-}
+
  .nav {
   display: flex;
   justify-content: space-around;
@@ -79,14 +70,19 @@ a:hover {
 
 #header {
   text-align: center;
-  background: url('images/forrest.svg') no-repeat top center ;
+  background: url('images/forrest.svg') no-repeat top center ,linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+  background-blend-mode: overlay;
   background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
   padding-top: 60px;
+}
+#name-logo{
+  height: 75%;
+  width: 75%;
 }
 .body{
   text-align: center;
-  background: url('images/forrest.svg') no-repeat top center ;
-  /* added for background */
   background-size: cover;
   padding-top: 60px;
   display:flex;
@@ -100,6 +96,7 @@ a:hover {
   width: 100%
 }
 header {
+ 
   line-height: 1.5;
 }
 header .profile-image {
@@ -262,6 +259,41 @@ a.social:hover {
 .clearfix {
   clear: both;
 }
+.stamp{
+  height: 100px;
+  width:260px;
+  left:200px;
+  bottom:70px;
+  border-radius:5px;
+  position:relative;
+  background-color:#ef8080;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  animation-delay:2.5s;
+  -webkit-animation-delay:2.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  opacity: 0;
+  -webkit-animation-fill-mode:forwards;
+   animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes pulse{
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity:.50;
+    transform-origin: 50% 50%;
+    transform: rotate(-2deg) scale(5);
+    transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  }
+  100%{
+    opacity:1;
+    transform: rotate(-15deg) scale(1);
+  }
+}
+
 
 /* Styles for larger screens */
 @media screen and (min-width: 720px) {
